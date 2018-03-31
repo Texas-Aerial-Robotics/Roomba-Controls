@@ -32,7 +32,8 @@ def main():
     
     while not rospy.is_shutdown():
 		## 180 degree turn every 20 seconds
-		if (time > 0 and time % 10 == 0):
+		## TODO: for some reason some intervals are skipped...WHY?
+		if (time > 0 and time % 20 == 0):
 			stop = time + 5
 			while time < stop:
 				msg.linear.x = 0
