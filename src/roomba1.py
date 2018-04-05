@@ -11,8 +11,8 @@ from math import sin
 
 def main():
 
-    #topic differential drive is lisetning on
-    pub = rospy.Publisher('roomba_control/cmd_vel', Twist, queue_size=10)
+    #topic differential drive is listening on
+    pub = rospy.Publisher('roomba_control_1/cmd_vel', Twist, queue_size=10)
 
     #intializing the node
     rospy.init_node('circler', anonymous=True)

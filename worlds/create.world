@@ -9,8 +9,8 @@
 
     <!-- Name it uniquely to not conflict with <include>'d model  -->
 <!-- <population name="roomba_population"> -->
-    <model name="roomba_control">
-		<pose>1 -1 0 0 0 0</pose>
+    <model name="roomba_control_1">
+		<pose>1 0 0 0 0 0</pose>
       <include>
 		<uri>model://create</uri>
       </include>
@@ -36,19 +36,97 @@
 	<publishWheelTF>true</publishWheelTF>
 	<publishWheelJointState>true</publishWheelJointState>
       </plugin>
+</model>
+<!-- roomba 2 -->
+    <model name="roomba_control_2">
+		<pose>0 1 0 0 0 1</pose>
+      <include>
+		<uri>model://create</uri>
+      </include>
+	
+    <!-- plugin -->
+    	<plugin name="differential_drive_controller"     filename="libgazebo_ros_diff_drive.so">
+			<alwaysOn>true</alwaysOn>
+			<updateRate>10</updateRate>
+			<leftJoint>create::right_wheel</leftJoint>
+			<rightJoint>create::left_wheel</rightJoint>
 
-    </model>
-<!-- population
- <pose>-0 0 0 0 0 0</pose>
-      <cylinder>
-        <radius>5</radius>
-        <length>0.0001</length>
-      </cylinder>
-      <model_count>10</model_count>
-      <distribution>
-        <type>uniform</type>
-      </distribution>
-    </population>
+			<wheelSeparation>0.5380</wheelSeparation>
+			<wheelDiameter>0.2410</wheelDiameter>
+
+			<torque>20</torque>
+			<commandTopic>cmd_vel</commandTopic>
+
+	<!-- topic name published in the cpp file -->
+	<odometryTopic>odom</odometryTopic>
+	<odometryFrame>odom</odometryFrame>
+	<robotBaseFrame>base</robotBaseFrame>
+
+	<publishWheelTF>true</publishWheelTF>
+	<publishWheelJointState>true</publishWheelJointState>
+      </plugin>
+	</model>
+
+<!-- roomba 3 -->
+    <model name="roomba_control_3">
+		<pose>1 1 0 0 0 1</pose>
+      <include>
+		<uri>model://create</uri>
+      </include>
+	
+    <!-- plugin -->
+    	<plugin name="differential_drive_controller"     filename="libgazebo_ros_diff_drive.so">
+			<alwaysOn>true</alwaysOn>
+			<updateRate>10</updateRate>
+			<leftJoint>create::right_wheel</leftJoint>
+			<rightJoint>create::left_wheel</rightJoint>
+
+			<wheelSeparation>0.5380</wheelSeparation>
+			<wheelDiameter>0.2410</wheelDiameter>
+
+			<torque>20</torque>
+			<commandTopic>cmd_vel</commandTopic>
+
+	<!-- topic name published in the cpp file -->
+	<odometryTopic>odom</odometryTopic>
+	<odometryFrame>odom</odometryFrame>
+	<robotBaseFrame>base</robotBaseFrame>
+
+	<publishWheelTF>true</publishWheelTF>
+	<publishWheelJointState>true</publishWheelJointState>
+      </plugin>
+	</model>
+
+<!-- roomba 4 
+    <model name="roomba_control_2">
+		<pose>0 1 0 0 0 1</pose>
+      <include>
+		<uri>model://create</uri>
+      </include>
+	
+    <!(note)plugin>
+    	<plugin name="differential_drive_controller"     filename="libgazebo_ros_diff_drive.so">
+			<alwaysOn>true</alwaysOn>
+			<updateRate>10</updateRate>
+			<leftJoint>create::right_wheel</leftJoint>
+			<rightJoint>create::left_wheel</rightJoint>
+
+			<wheelSeparation>0.5380</wheelSeparation>
+			<wheelDiameter>0.2410</wheelDiameter>
+
+			<torque>20</torque>
+			<commandTopic>cmd_vel</commandTopic>
+
+	<(note)topic name published in the cpp file>
+	<odometryTopic>odom</odometryTopic>
+	<odometryFrame>odom</odometryFrame>
+	<robotBaseFrame>base</robotBaseFrame>
+
+	<publishWheelTF>true</publishWheelTF>
+	<publishWheelJointState>true</publishWheelJointState>
+      </plugin>
+	</model>
 -->
+
   </world>
 </sdf>
