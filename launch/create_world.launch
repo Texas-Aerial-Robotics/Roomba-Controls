@@ -5,17 +5,17 @@
     <env name="GAZEBO_RESOURCE_PATH" value="$(env GAZEBO_RESOURCE_PATH):$(find roomba_control)"/>
     <arg name="world_name" value="worlds/create.world"/>
     <arg name="paused" value="false"/>
-    <arg name="use_sim_time" value="true"/>
+   <!-- <arg name="use_sim_time" value="true"/> -->
     <arg name="gui" value="true"/>
     <arg name="headless" value="false"/>
     <arg name="debug" value="false"/>
   </include>
-  <param name="/use_sim_time" value="true" />
+  <param name="/use_sim_time" value="true" /> 
 
   <node name="publisher_1" pkg="roomba_control" type="roomba1.py" required="true" />
-  <node name="publisher_2" pkg="roomba_control" type="roomba2.py" required="true" />
+  <!--<node name="publisher_2" pkg="roomba_control" type="roomba2.py" required="true" />
   <node name="publisher_3" pkg="roomba_control" type="roomba3.py" required="true" />
-  <!--<node name="publisher_4" pkg="roomba_control" type="roomba4.py" required="true" />
+  <node name="publisher_4" pkg="roomba_control" type="roomba4.py" required="true" />
   <node name="publisher_5" pkg="roomba_control" type="roomba5.py" required="true" />
   <node name="publisher_6" pkg="roomba_control" type="roomba6.py" required="true" />
   <node name="publisher_7" pkg="roomba_control" type="roomba7.py" required="true" />
