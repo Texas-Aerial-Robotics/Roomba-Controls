@@ -17,35 +17,36 @@
 	
     <!-- plugin -->
     	<plugin name="differential_drive_controller"     filename="libgazebo_ros_diff_drive.so">
-			<alwaysOn>true</alwaysOn>
-			<updateRate>10</updateRate>
-			<leftJoint>create::right_wheel</leftJoint>
-			<rightJoint>create::left_wheel</rightJoint>
+	<alwaysOn>true</alwaysOn>
+	<updateRate>10</updateRate>
+	<leftJoint>create::right_wheel</leftJoint>
+	<rightJoint>create::left_wheel</rightJoint>
+			
+	<wheelSeparation>0.260</wheelSeparation>
+	<wheelDiameter>0.066</wheelDiameter>
 
-			<wheelSeparation>0.5380</wheelSeparation>
-			<wheelDiameter>0.2410</wheelDiameter>
-
-			<torque>20</torque>
-			<commandTopic>cmd_vel</commandTopic>
-
+	<torque>20</torque>
+	<commandTopic>cmd_vel</commandTopic>
+	<legacyMode>false</legacyMode>
 	<!-- topic name published in the cpp file -->
 	<odometryTopic>odom</odometryTopic>
 	<odometryFrame>odom</odometryFrame>
 	<robotBaseFrame>base</robotBaseFrame>
-
+	
 	<publishWheelTF>true</publishWheelTF>
 	<publishWheelJointState>true</publishWheelJointState>
       </plugin>
 </model>
-<!-- roomba 2 -->
+<!-- roomba 2 
     <model name="roomba_control_2">
 		<pose>0 1 0 0 0 1</pose>
       <include>
 		<uri>model://create</uri>
       </include>
 	
-    <!-- plugin -->
-    	<plugin name="differential_drive_controller"     filename="libgazebo_ros_diff_drive.so">
+    #plugin     	
+<plugin name="differential_drive_controller"     
+filename="libgazebo_ros_diff_drive.so">
 			<alwaysOn>true</alwaysOn>
 			<updateRate>10</updateRate>
 			<leftJoint>create::right_wheel</leftJoint>
@@ -57,7 +58,7 @@
 			<torque>20</torque>
 			<commandTopic>cmd_vel</commandTopic>
 
-	<!-- topic name published in the cpp file -->
+	##topic name published in the cpp file
 	<odometryTopic>odom</odometryTopic>
 	<odometryFrame>odom</odometryFrame>
 	<robotBaseFrame>base</robotBaseFrame>
@@ -66,15 +67,15 @@
 	<publishWheelJointState>true</publishWheelJointState>
       </plugin>
 	</model>
-
-<!-- roomba 3 -->
+-->
+<!-- roomba 3 
     <model name="roomba_control_3">
 		<pose>1 1 0 0 0 1</pose>
       <include>
 		<uri>model://create</uri>
       </include>
 	
-    <!-- plugin -->
+    # plugin --><!--
     	<plugin name="differential_drive_controller"     filename="libgazebo_ros_diff_drive.so">
 			<alwaysOn>true</alwaysOn>
 			<updateRate>10</updateRate>
@@ -87,7 +88,7 @@
 			<torque>20</torque>
 			<commandTopic>cmd_vel</commandTopic>
 
-	<!-- topic name published in the cpp file -->
+	# topic name published in the cpp file --> <!--
 	<odometryTopic>odom</odometryTopic>
 	<odometryFrame>odom</odometryFrame>
 	<robotBaseFrame>base</robotBaseFrame>
@@ -96,7 +97,7 @@
 	<publishWheelJointState>true</publishWheelJointState>
       </plugin>
 	</model>
-
+-->
 <!-- roomba 4 
     <model name="roomba_control_2">
 		<pose>0 1 0 0 0 1</pose>
