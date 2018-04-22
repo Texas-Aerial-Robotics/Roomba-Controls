@@ -31,7 +31,7 @@ def main():
 
     time = rospy.get_rostime()
     
-    ##TODO: make 180 while loop based on angle
+    ##TODO:
     ##    : fix noise right after 180 rotation
     
     while not rospy.is_shutdown():
@@ -40,11 +40,11 @@ def main():
 			initial_time = time.secs
 			while (current_angle < math.pi):
 				msg.linear.x = 0
-   				msg.angular.z = math.pi/4
+   				msg.angular.z = math.pi/6
 				flag_180 = 1
 				time = rospy.get_rostime() 
 				current_time = time.secs
-				current_angle = (math.pi/4)*(current_time-initial_time)
+				current_angle = (math.pi/6)*(current_time-initial_time)
 				pub.publish(msg)
 				rate.sleep()		
 		## 20 degree noise every 5 seconds
@@ -57,11 +57,12 @@ def main():
 			msg.angular.z = 0
 			msg.linear.x = v
 
-		flag_180 = 0	
+			
 		current_angle = 0
 		time = rospy.get_rostime()
 		pub.publish(msg)
 		rate.sleep()
+		flag_180 = 0
 
 
 if __name__ == '__main__':

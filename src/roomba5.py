@@ -18,7 +18,7 @@ msg = Twist()
 def main():
 
     #topic differential drive is listening on
-    pub = rospy.Publisher('roomba_control_3/cmd_vel', Twist, queue_size=10)
+    pub = rospy.Publisher('roomba_control_5/cmd_vel', Twist, queue_size=10)
 
     #intializing the node
     rospy.init_node('roomba_control', anonymous=True)
