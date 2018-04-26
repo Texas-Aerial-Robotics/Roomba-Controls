@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<sdf version="1.5">
+<sdf version="1.6">
   <model name="create">
     <link name="base">
       <inertial>
@@ -31,27 +31,29 @@
           </mesh>
         </geometry>
       </visual>
-      <visual name='top_plate_visual'>
-          <pose>-0.1 0.0 0.09 0 0 0</pose>
-          <geometry>
-            <box>
-              <size>.18 .25 .025</size>
-            </box>
-          </geometry>
-        <material>
-            <!--red (RGB = 176,22,4)
-            <diffuse>0.6875 0.0859 0.015625 1</diffuse>
-            <specular>0.6875 0.0859 0.015625 1</specular>
-            <ambient>0.6875 0.0859 0.015625 1</ambient>
-            emissive>176 22 4 1</emissive-->
 
-            <!--green (RGB = 22,86,16)-->
-            <diffuse>0.0859375 0.3359375 0.0625 1</diffuse>
-            <specular>.0859375 0.3359375 0.0625 1</specular>
-            <ambient>.0859375 0.3359375 0.0625 1</ambient>
-            <emissive>.0859375 0.3359375 0.0625 1</emissive>
-        </material>
-      </visual>
+  <visual name='top_plate_visual'>
+    <pose>-0.1 0.0 0.09 0 0 0</pose>
+    <geometry>
+      <box>
+        <size>.18 .25 .025</size>
+      </box>
+    </geometry>
+	<material>
+	    <!--red (RGB = 176,22,4)-->
+	    <diffuse>0.6875 0.0859 0.015625 1</diffuse>
+	    <specular>0.6875 0.0859 0.015625 1</specular>
+	    <ambient>0.6875 0.0859 0.015625 1</ambient>
+	    <emissive>176 22 4 1</emissive>
+
+	    <!--green (RGB = 22,86,16)
+	    <diffuse>0.0859375 0.3359375 0.0625 1</diffuse>
+	    <specular>.0859375 0.3359375 0.0625 1</specular>
+	    <ambient>.0859375 0.3359375 0.0625 1</ambient>
+	    <emissive>.0859375 0.3359375 0.0625 1</emissive-->
+	</material>
+  </visual>
+
       <collision name="front_wheel_collision">
         <pose>0.130000 0 0.017000 0 1.570700 1.570700</pose>
         <geometry>
@@ -300,4 +302,6 @@
       </axis>
     </joint>
   </model>
+
+
 </sdf>

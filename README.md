@@ -4,6 +4,18 @@ Controlling the behaviors of the roomba
 
 HOW TO RUN
 
+please add the following to your .bashrc
+```
+export GAZEBO_MODEL_PATH=${GAZEBO_MODEL_PATH}:~/catkin_ws/src/roomba_controls/models
+```
+
+If you were previously running the Gazebo-Ros sim please REMOVE the following from your .bashrc
+```
+export GAZEBO_MODEL_PATH=${GAZEBO_MODEL_PATH}:/home/eric/Computations/roomba_host/models
+```
+
+
+
 Assuming you have catkin, ROS kinetic, Gazebo, etc...
 
 1. Open up a terminal and launch roscore
