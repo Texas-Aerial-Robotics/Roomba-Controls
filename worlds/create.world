@@ -13,7 +13,7 @@
     <model name="roomba_control_1">
 		<pose>1 0 0 0 0 0</pose>
       <include>
-		<uri>model://create</uri>
+		<uri>model://roomba</uri>
       </include>
 	
     <!-- plugin -->
@@ -43,7 +43,7 @@
     <model name="roomba_control_2">
 		<pose>.809017 .587785 0 0 0 .628319</pose>
       <include>
-		<uri>model://create</uri>
+		<uri>model://roomba</uri>
       </include>
 	
 		<plugin name="differential_drive_controller"     filename="libgazebo_ros_diff_drive.so">
@@ -71,7 +71,7 @@
     <model name="roomba_control_3">
 		<pose>.309017 .951057 0 0 0 1.2566</pose>
       <include>
-		<uri>model://create</uri>
+		<uri>model://roomba</uri>
       </include>
 	
 
@@ -101,7 +101,7 @@
     <model name="roomba_control_4">
 	<pose>-.309017 .951057 0 0 0 1.88496</pose>
       <include>
-		<uri>model://create</uri>
+		<uri>model://roomba</uri>
       </include>
 	
     	<plugin name="differential_drive_controller"     filename="libgazebo_ros_diff_drive.so">
@@ -129,7 +129,7 @@
 	<model name="roomba_control_5">
 	<pose>-.809017 .587785 0 0 0 2.51327</pose>
       <include>
-		<uri>model://create</uri>
+		<uri>model://roomba</uri>
       </include>
 	
     	<plugin name="differential_drive_controller"     filename="libgazebo_ros_diff_drive.so">
@@ -157,7 +157,7 @@
 <model name="roomba_control_6">
 	<pose>-1 0 0 0 0 3.14159</pose>
       <include>
-		<uri>model://create</uri>
+		<uri>model://roomba</uri>
       </include>
 	
     	<plugin name="differential_drive_controller"     filename="libgazebo_ros_diff_drive.so">
@@ -185,7 +185,7 @@
 <model name="roomba_control_7">
 	<pose>-.809017 -.587785 0 0 0 3.76991</pose>
       <include>
-		<uri>model://create</uri>
+		<uri>model://roomba</uri>
       </include>
 	
     	<plugin name="differential_drive_controller"     filename="libgazebo_ros_diff_drive.so">
@@ -213,7 +213,7 @@
 <model name="roomba_control_8">
 	<pose>-.309017 -.951057 0 0 0 4.39823</pose>
       <include>
-		<uri>model://create</uri>
+		<uri>model://roomba</uri>
       </include>
 	
     	<plugin name="differential_drive_controller"     filename="libgazebo_ros_diff_drive.so">
@@ -241,7 +241,7 @@
 <model name="roomba_control_9">
 	<pose>.309017 -.951057 0 0 0 5.02655</pose>
       <include>
-		<uri>model://create</uri>
+		<uri>model://roomba</uri>
       </include>
 	
     	<plugin name="differential_drive_controller"     filename="libgazebo_ros_diff_drive.so">
@@ -269,7 +269,7 @@
 <model name="roomba_control_10">
 	<pose>.809017 -.587785 0 0 0 5.65487</pose>
       <include>
-		<uri>model://create</uri>
+		<uri>model://roomba</uri>
       </include>
 	
     	<plugin name="differential_drive_controller"     filename="libgazebo_ros_diff_drive.so">
