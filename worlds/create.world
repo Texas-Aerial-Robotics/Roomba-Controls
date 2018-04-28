@@ -16,7 +16,7 @@
       </include>
 	
     <!-- plugin -->
-    	<plugin name="differential_drive_controller"     filename="libgazebo_ros_diff_drive.so">
+    <plugin name="differential_drive_controller"     filename="libgazebo_ros_diff_drive.so">
 	<alwaysOn>true</alwaysOn>
 	<updateRate>10</updateRate>
 	<leftJoint>create::right_wheel</leftJoint>
@@ -36,6 +36,13 @@
 	<publishWheelTF>true</publishWheelTF>
 	<publishWheelJointState>true</publishWheelJointState>
       </plugin>
+
+       <!-- <plugin name="roomba1_gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
+	<alwaysOn>true</alwaysOn>
+	<updateRate>10</updateRate>
+	<bumperTopicName>roomba1_bumper</bumperTopicName>
+	<frameName>world</frameName>
+       </plugin> -->
 </model>
 
 <!-- roomba 2 -->
