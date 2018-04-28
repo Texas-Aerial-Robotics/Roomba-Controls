@@ -2,8 +2,7 @@
   <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <!-- Because the world path is relative to GAZEBO_RESOURCE_PATH, we append to it here. -->
-    <!-- <env name="GAZEBO_MODEL_PATH" value="$(env GAZEBO_MODEL_PATH):$(find roomba_control)"/> -->
-    <arg name="world_name" value="$(find roomba_control)/worlds/create.world"/>
+        <arg name="world_name" value="$(find roomba_control)/worlds/create.world"/>
     <arg name="paused" value="true"/>
     <arg name="use_sim_time" value="true"/> 
     <arg name="gui" value="true"/>
@@ -22,6 +21,10 @@
   <node name="publisher_8" pkg="roomba_control" type="roomba8.py" required="true" />
   <node name="publisher_9" pkg="roomba_control" type="roomba9.py" required="true" />
   <node name="publisher_10" pkg="roomba_control" type="roomba10.py" required="true" />
+  <node name="publisher_11" pkg="roomba_control" type="obstacle1.py" required="true" />
+  <node name="publisher_12" pkg="roomba_control" type="obstacle2.py" required="true" />
+  <node name="publisher_13" pkg="roomba_control" type="obstacle3.py" required="true" />
+  <node name="publisher_14" pkg="roomba_control" type="obstacle4.py" required="true" />
   
 
 </launch>

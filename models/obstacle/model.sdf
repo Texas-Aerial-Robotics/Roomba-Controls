@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
-<sdf version="1.6">
-  <model name="target">
+<sdf version="1.5">
+  <model name="create">
     <link name="base">
       <inertial>
         <pose>0.001453 -0.000453 0.029787 0 0 0</pose>
@@ -31,6 +31,7 @@
           </mesh>
         </geometry>
       </visual>
+       
       <visual name="obstacle_visual">
         <pose>0 0 1 0 0 0</pose>
 	<geometry>
@@ -40,6 +41,7 @@
           </cylinder>
         </geometry>
       </visual>
+
 
       <collision name="front_wheel_collision">
         <pose>0.130000 0 0.017000 0 1.570700 1.570700</pose>
@@ -289,6 +291,4 @@
       </axis>
     </joint>
   </model>
-
-
 </sdf>

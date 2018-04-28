@@ -7,7 +7,6 @@
       <uri>model://mygroundplane</uri>
     </include>
 
-<!-- <population name="roomba_population"> ... doesn't seem to work so I went the inefficient route -->
 
 <!--Roomba 1 -->
     <model name="roomba_control_1">
@@ -293,6 +292,123 @@
       </plugin>
 
 	</model>
+
+<!-- obstacle roomba 1 -->
+
+<model name="obstacle_roomba_1">
+	<pose>5 0 0 0 0 4.71289</pose>
+      <include>
+		<uri>model://obstacle</uri>
+      </include>
+	
+    	<plugin name="differential_drive_controller"     filename="libgazebo_ros_diff_drive.so">
+			<alwaysOn>true</alwaysOn>
+			<updateRate>10</updateRate>
+			<leftJoint>create::right_wheel</leftJoint>
+			<rightJoint>create::left_wheel</rightJoint>
+
+			<wheelSeparation>0.26000</wheelSeparation>
+			<wheelDiameter>0.06600</wheelDiameter>
+
+			<torque>20</torque> 
+			<commandTopic>cmd_vel</commandTopic>
+
+	<odometryTopic>odom</odometryTopic>
+	<odometryFrame>odom</odometryFrame>
+	<robotBaseFrame>base</robotBaseFrame>
+
+	<publishWheelTF>true</publishWheelTF>
+	<publishWheelJointState>true</publishWheelJointState>
+      </plugin>
+</model>
+
+<!-- obstacle roomba 2 -->
+
+<model name="obstacle_roomba_2">
+	<pose>0 5 0 0 0 0</pose>
+      <include>
+		<uri>model://obstacle</uri>
+      </include>
+	
+    	<plugin name="differential_drive_controller"     filename="libgazebo_ros_diff_drive.so">
+			<alwaysOn>true</alwaysOn>
+			<updateRate>10</updateRate>
+			<leftJoint>create::right_wheel</leftJoint>
+			<rightJoint>create::left_wheel</rightJoint>
+
+			<wheelSeparation>0.26000</wheelSeparation>
+			<wheelDiameter>0.06600</wheelDiameter>
+
+			<torque>20</torque>
+			<commandTopic>cmd_vel</commandTopic>
+
+	<odometryTopic>odom</odometryTopic>
+	<odometryFrame>odom</odometryFrame>
+	<robotBaseFrame>base</robotBaseFrame>
+
+	<publishWheelTF>true</publishWheelTF>
+	<publishWheelJointState>true</publishWheelJointState>
+      </plugin>
+</model>
+
+<!-- obstacle roomba 3 -->
+
+<model name="obstacle_roomba_3">
+	<pose>-5 0 0 0 0 1.570796</pose>
+      <include>
+		<uri>model://obstacle</uri>
+      </include>
+	
+    	<plugin name="differential_drive_controller"     filename="libgazebo_ros_diff_drive.so">
+			<alwaysOn>true</alwaysOn>
+			<updateRate>10</updateRate>
+			<leftJoint>create::right_wheel</leftJoint>
+			<rightJoint>create::left_wheel</rightJoint>
+
+			<wheelSeparation>0.26000</wheelSeparation>
+			<wheelDiameter>0.06600</wheelDiameter>
+
+			<torque>20</torque>
+			<commandTopic>cmd_vel</commandTopic>
+
+	<odometryTopic>odom</odometryTopic>
+	<odometryFrame>odom</odometryFrame>
+	<robotBaseFrame>base</robotBaseFrame>
+
+	<publishWheelTF>true</publishWheelTF>
+	<publishWheelJointState>true</publishWheelJointState>
+      </plugin>
+</model>
+
+<!-- obstacle roomba 4 -->
+
+<model name="obstacle_roomba_4">
+	<pose>0 -5 0 0 0 3.14159</pose>
+      <include>
+		<uri>model://obstacle</uri>
+      </include>
+	
+    	<plugin name="differential_drive_controller"     filename="libgazebo_ros_diff_drive.so">
+			<alwaysOn>true</alwaysOn>
+			<updateRate>10</updateRate>
+			<leftJoint>create::right_wheel</leftJoint>
+			<rightJoint>create::left_wheel</rightJoint>
+
+			<wheelSeparation>0.26000</wheelSeparation>
+			<wheelDiameter>0.06600</wheelDiameter>
+
+			<torque>20</torque>
+			<commandTopic>cmd_vel</commandTopic>
+
+	<odometryTopic>odom</odometryTopic>
+	<odometryFrame>odom</odometryFrame>
+	<robotBaseFrame>base</robotBaseFrame>
+
+	<publishWheelTF>true</publishWheelTF>
+	<publishWheelJointState>true</publishWheelJointState>
+      </plugin>
+</model>
+
 
   </world>
 </sdf>
