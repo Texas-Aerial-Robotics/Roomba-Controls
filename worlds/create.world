@@ -69,7 +69,7 @@
           <collision>collision</collision>
         </contact>
         <plugin name="gripper_bumper" filename="libgazebo_ros_bumper.so">
-          <bumperTopicName>front_bumper</bumperTopicName>
+          <bumperTopicName>front_bumper1</bumperTopicName>
           <frameName>roomba1</frameName>
         </plugin>
       </sensor>
@@ -150,7 +150,7 @@
 	          <collision>collision</collision>
 	        </contact>
 	        <plugin name="gripper_bumper" filename="libgazebo_ros_bumper.so">
-	          <bumperTopicName>front_bumper</bumperTopicName>
+	          <bumperTopicName>front_bumper2</bumperTopicName>
 	          <frameName>roomba2</frameName>
 	        </plugin>
 	      </sensor>
@@ -231,7 +231,7 @@
 	          <collision>collision</collision>
 	        </contact>
 	        <plugin name="gripper_bumper" filename="libgazebo_ros_bumper.so">
-	          <bumperTopicName>front_bumper</bumperTopicName>
+	          <bumperTopicName>front_bumpe3</bumperTopicName>
 	          <frameName>roomba3</frameName>
 	        </plugin>
 	      </sensor>
@@ -311,7 +311,7 @@
 	          <collision>collision</collision>
 	        </contact>
 	        <plugin name="gripper_bumper" filename="libgazebo_ros_bumper.so">
-	          <bumperTopicName>front_bumper</bumperTopicName>
+	          <bumperTopicName>front_bumper4</bumperTopicName>
 	          <frameName>roomba4</frameName>
 	        </plugin>
 	      </sensor>
@@ -390,7 +390,7 @@
 	          <collision>collision</collision>
 	        </contact>
 	        <plugin name="gripper_bumper" filename="libgazebo_ros_bumper.so">
-	          <bumperTopicName>front_bumper</bumperTopicName>
+	          <bumperTopicName>front_bumper5</bumperTopicName>
 	          <frameName>roomba5</frameName>
 	        </plugin>
 	      </sensor>
@@ -470,7 +470,7 @@
 	          <collision>collision</collision>
 	        </contact>
 	        <plugin name="gripper_bumper" filename="libgazebo_ros_bumper.so">
-	          <bumperTopicName>front_bumper</bumperTopicName>
+	          <bumperTopicName>front_bumper6</bumperTopicName>
 	          <frameName>roomba6</frameName>
 	        </plugin>
 	      </sensor>
@@ -549,7 +549,7 @@
 	          <collision>collision</collision>
 	        </contact>
 	        <plugin name="gripper_bumper" filename="libgazebo_ros_bumper.so">
-	          <bumperTopicName>front_bumper</bumperTopicName>
+	          <bumperTopicName>front_bumper7</bumperTopicName>
 	          <frameName>roomba7</frameName>
 	        </plugin>
 	      </sensor>
@@ -630,7 +630,7 @@
 	          <collision>collision</collision>
 	        </contact>
 	        <plugin name="gripper_bumper" filename="libgazebo_ros_bumper.so">
-	          <bumperTopicName>front_bumper</bumperTopicName>
+	          <bumperTopicName>front_bumper8</bumperTopicName>
 	          <frameName>roomba8</frameName>
 	        </plugin>
 	      </sensor>
@@ -709,7 +709,7 @@
 	          <collision>collision</collision>
 	        </contact>
 	        <plugin name="gripper_bumper" filename="libgazebo_ros_bumper.so">
-	          <bumperTopicName>front_bumper</bumperTopicName>
+	          <bumperTopicName>front_bumper9</bumperTopicName>
 	          <frameName>roomba9</frameName>
 	        </plugin>
 	      </sensor>
@@ -788,7 +788,7 @@
 	          <collision>collision</collision>
 	        </contact>
 	        <plugin name="gripper_bumper" filename="libgazebo_ros_bumper.so">
-	          <bumperTopicName>front_bumper</bumperTopicName>
+	          <bumperTopicName>front_bumper10</bumperTopicName>
 	          <frameName>roomba10</frameName>
 	        </plugin>
 	      </sensor>
