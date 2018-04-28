@@ -241,17 +241,6 @@
           </cylinder>
         </geometry>
       </visual>
-          <sensor name="gripper_contact_sensor" type="contact">
-          <always_on>true</always_on>
-          <update_rate>30.0</update_rate>
-          <contact>
-            <collision>collision</collision>
-          </contact>
-          <plugin name="gripper_bumper" filename="libgazebo_ros_bumper.so">
-            <bumperTopicName>gripper_contact_sensor_state</bumperTopicName>
-            <frameName>gripper</frameName>
-          </plugin>
-        </sensor>
     </link>
     <link name="right_wheel">
       <pose>0 -0.130000 0.032000 0 0 0</pose>
@@ -295,6 +284,10 @@
           </cylinder>
         </geometry>
       </visual>
+
+       
+
+
     </link>
     <joint name="left_wheel" type="revolute">
       <parent>base</parent>
@@ -312,5 +305,57 @@
         <use_parent_model_frame>true</use_parent_model_frame>
       </axis>
     </joint>
+
+
+    <!-- front bumper and ros plugin -->
+   <!--  <link name="bumper">
+      <pose>0.15 0 .05 0 0 0</pose>
+      <collision name="collision">
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>.06 .26 .08</size>
+            </box>
+          </geometry>
+      </collision>
+      <visual name='front_bumper_visual'>
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>.05 .25 .08</size>
+            </box>
+          </geometry>
+        <material>
+            <diffuse>0.0859375 0.3359375 0.0625 1</diffuse>
+            <specular>.0859375 0.3359375 0.0625 1</specular>
+            <ambient>.0859375 0.3359375 0.0625 1</ambient>
+            <emissive>.0859375 0.3359375 0.0625 1</emissive>
+        </material>
+      </visual>
+     
+      <sensor name="gripper_contact_sensor" type="contact">
+        <always_on>true</always_on>
+        <update_rate>1</update_rate>
+        <contact>
+          <collision>collision</collision>
+        </contact>
+        <plugin name="gripper_bumper" filename="libgazebo_ros_bumper.so">
+          <bumperTopicName>front_bumper</bumperTopicName>
+          <frameName>bumper</frameName>
+        </plugin>
+      </sensor>
+
+
+    </link>
+    <joint name="bumper" type="fixed">
+      <parent>base</parent>
+      <child>bumper</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
+      </axis>
+    </joint> -->
+
+
   </model>
 </sdf>

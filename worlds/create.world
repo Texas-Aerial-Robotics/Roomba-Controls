@@ -37,13 +37,57 @@
 	<publishWheelJointState>true</publishWheelJointState>
       </plugin>
 
-       <!-- <plugin name="roomba1_gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
-	<alwaysOn>true</alwaysOn>
-	<updateRate>10</updateRate>
-	<bumperTopicName>roomba1_bumper</bumperTopicName>
-	<frameName>world</frameName>
-       </plugin> -->
+     <link name="bumper">
+      <pose>0.15 0 .05 0 0 0</pose>
+      <collision name="collision">
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>.06 .26 .08</size>
+            </box>
+          </geometry>
+      </collision>
+      <visual name='front_bumper_visual'>
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>.05 .25 .08</size>
+            </box>
+          </geometry>
+        <material>
+            <diffuse>0.0859375 0.3359375 0.0625 1</diffuse>
+            <specular>.0859375 0.3359375 0.0625 1</specular>
+            <ambient>.0859375 0.3359375 0.0625 1</ambient>
+            <emissive>.0859375 0.3359375 0.0625 1</emissive>
+        </material>
+      </visual>
+     
+      <sensor name="gripper_contact_sensor" type="contact">
+        <always_on>true</always_on>
+        <update_rate>1</update_rate>
+        <contact>
+          <collision>collision</collision>
+        </contact>
+        <plugin name="gripper_bumper" filename="libgazebo_ros_bumper.so">
+          <bumperTopicName>front_bumper</bumperTopicName>
+          <frameName>roomba1</frameName>
+        </plugin>
+      </sensor>
+
+
+    </link>
+    <joint name="bumper" type="fixed">
+      <parent>create::base</parent>
+      <child>bumper</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <use_parent_model_frame>true</use_parent_model_frame>
+      </axis>
+    </joint>
 </model>
+
+
+
 
 <!-- roomba 2 -->
     <model name="roomba_control_2">
@@ -71,6 +115,57 @@
 	<publishWheelTF>true</publishWheelTF>
 	<publishWheelJointState>true</publishWheelJointState>
       </plugin>
+
+	  	  <!-- bumper physics  -->
+	      <link name="bumper">
+	      <pose>0.15 0 .05 0 0 0</pose>
+	      <collision name="collision">
+	          <pose>0 0 0 0 0 0</pose>
+	          <geometry>
+	            <box>
+	              <size>.06 .26 .08</size>
+	            </box>
+	          </geometry>
+	      </collision>
+	      <visual name='front_bumper_visual'>
+	          <pose>0 0 0 0 0 0</pose>
+	          <geometry>
+	            <box>
+	              <size>.05 .25 .08</size>
+	            </box>
+	          </geometry>
+	        <material>
+	            <diffuse>0.0859375 0.3359375 0.0625 1</diffuse>
+	            <specular>.0859375 0.3359375 0.0625 1</specular>
+	            <ambient>.0859375 0.3359375 0.0625 1</ambient>
+	            <emissive>.0859375 0.3359375 0.0625 1</emissive>
+	        </material>
+	      </visual>
+	     
+	     <!-- bumper plugin -->
+	      <sensor name="gripper_contact_sensor" type="contact">
+	        <always_on>true</always_on>
+	        <update_rate>1</update_rate>
+	        <contact>
+	          <collision>collision</collision>
+	        </contact>
+	        <plugin name="gripper_bumper" filename="libgazebo_ros_bumper.so">
+	          <bumperTopicName>front_bumper</bumperTopicName>
+	          <frameName>roomba2</frameName>
+	        </plugin>
+	      </sensor>
+
+	    </link>
+	    <!-- bumper plugin -->
+	    <joint name="bumper" type="fixed">
+	      <parent>create::base</parent>
+	      <child>bumper</child>
+	      <axis>
+	        <xyz>0 1 0</xyz>
+	        <use_parent_model_frame>true</use_parent_model_frame>
+	      </axis>
+	    </joint>
+
 	</model>
 
 <!--Roomba 3 -->
@@ -101,6 +196,58 @@
 	<publishWheelTF>true</publishWheelTF>
 	<publishWheelJointState>true</publishWheelJointState>
       </plugin>
+
+      <!-- bumper physics  -->
+	      <link name="bumper">
+	      <pose>0.15 0 .05 0 0 0</pose>
+	      <collision name="collision">
+	          <pose>0 0 0 0 0 0</pose>
+	          <geometry>
+	            <box>
+	              <size>.06 .26 .08</size>
+	            </box>
+	          </geometry>
+	      </collision>
+	      <visual name='front_bumper_visual'>
+	          <pose>0 0 0 0 0 0</pose>
+	          <geometry>
+	            <box>
+	              <size>.05 .25 .08</size>
+	            </box>
+	          </geometry>
+	        <material>
+	            <diffuse>0.0859375 0.3359375 0.0625 1</diffuse>
+	            <specular>.0859375 0.3359375 0.0625 1</specular>
+	            <ambient>.0859375 0.3359375 0.0625 1</ambient>
+	            <emissive>.0859375 0.3359375 0.0625 1</emissive>
+	        </material>
+	      </visual>
+	     
+	     <!-- bumper plugin -->
+	      <sensor name="gripper_contact_sensor" type="contact">
+	        <always_on>true</always_on>
+	        <update_rate>1</update_rate>
+	        <contact>
+	          <collision>collision</collision>
+	        </contact>
+	        <plugin name="gripper_bumper" filename="libgazebo_ros_bumper.so">
+	          <bumperTopicName>front_bumper</bumperTopicName>
+	          <frameName>roomba3</frameName>
+	        </plugin>
+	      </sensor>
+
+	    </link>
+	    <!-- bumper plugin -->
+	    <joint name="bumper" type="fixed">
+	      <parent>create::base</parent>
+	      <child>bumper</child>
+	      <axis>
+	        <xyz>0 1 0</xyz>
+	        <use_parent_model_frame>true</use_parent_model_frame>
+	      </axis>
+	    </joint>
+
+
 	</model>
 
 <!-- roomba 4 -->
@@ -129,6 +276,57 @@
 	<publishWheelTF>true</publishWheelTF>
 	<publishWheelJointState>true</publishWheelJointState>
       </plugin>
+
+      <!-- bumper physics  -->
+	      <link name="bumper">
+	      <pose>0.15 0 .05 0 0 0</pose>
+	      <collision name="collision">
+	          <pose>0 0 0 0 0 0</pose>
+	          <geometry>
+	            <box>
+	              <size>.06 .26 .08</size>
+	            </box>
+	          </geometry>
+	      </collision>
+	      <visual name='front_bumper_visual'>
+	          <pose>0 0 0 0 0 0</pose>
+	          <geometry>
+	            <box>
+	              <size>.05 .25 .08</size>
+	            </box>
+	          </geometry>
+	        <material>
+	            <diffuse>0.0859375 0.3359375 0.0625 1</diffuse>
+	            <specular>.0859375 0.3359375 0.0625 1</specular>
+	            <ambient>.0859375 0.3359375 0.0625 1</ambient>
+	            <emissive>.0859375 0.3359375 0.0625 1</emissive>
+	        </material>
+	      </visual>
+	     
+	     <!-- bumper plugin -->
+	      <sensor name="gripper_contact_sensor" type="contact">
+	        <always_on>true</always_on>
+	        <update_rate>1</update_rate>
+	        <contact>
+	          <collision>collision</collision>
+	        </contact>
+	        <plugin name="gripper_bumper" filename="libgazebo_ros_bumper.so">
+	          <bumperTopicName>front_bumper</bumperTopicName>
+	          <frameName>roomba4</frameName>
+	        </plugin>
+	      </sensor>
+
+	    </link>
+	    <!-- bumper plugin -->
+	    <joint name="bumper" type="fixed">
+	      <parent>create::base</parent>
+	      <child>bumper</child>
+	      <axis>
+	        <xyz>0 1 0</xyz>
+	        <use_parent_model_frame>true</use_parent_model_frame>
+	      </axis>
+	    </joint>
+
 	</model>
 
 <!-- roomba 5 -->
@@ -157,6 +355,58 @@
 	<publishWheelTF>true</publishWheelTF>
 	<publishWheelJointState>true</publishWheelJointState>
       </plugin>
+
+      <!-- bumper physics  -->
+	      <link name="bumper">
+	      <pose>0.15 0 .05 0 0 0</pose>
+	      <collision name="collision">
+	          <pose>0 0 0 0 0 0</pose>
+	          <geometry>
+	            <box>
+	              <size>.06 .26 .08</size>
+	            </box>
+	          </geometry>
+	      </collision>
+	      <visual name='front_bumper_visual'>
+	          <pose>0 0 0 0 0 0</pose>
+	          <geometry>
+	            <box>
+	              <size>.05 .25 .08</size>
+	            </box>
+	          </geometry>
+	        <material>
+	            <diffuse>0.0859375 0.3359375 0.0625 1</diffuse>
+	            <specular>.0859375 0.3359375 0.0625 1</specular>
+	            <ambient>.0859375 0.3359375 0.0625 1</ambient>
+	            <emissive>.0859375 0.3359375 0.0625 1</emissive>
+	        </material>
+	      </visual>
+	     
+	     <!-- bumper plugin -->
+	      <sensor name="gripper_contact_sensor" type="contact">
+	        <always_on>true</always_on>
+	        <update_rate>1</update_rate>
+	        <contact>
+	          <collision>collision</collision>
+	        </contact>
+	        <plugin name="gripper_bumper" filename="libgazebo_ros_bumper.so">
+	          <bumperTopicName>front_bumper</bumperTopicName>
+	          <frameName>roomba5</frameName>
+	        </plugin>
+	      </sensor>
+
+	    </link>
+	    <!-- bumper plugin -->
+	    <joint name="bumper" type="fixed">
+	      <parent>create::base</parent>
+	      <child>bumper</child>
+	      <axis>
+	        <xyz>0 1 0</xyz>
+	        <use_parent_model_frame>true</use_parent_model_frame>
+	      </axis>
+	    </joint>
+
+
 	</model>
 
 <!-- roomba 6 -->
@@ -185,6 +435,57 @@
 	<publishWheelTF>true</publishWheelTF>
 	<publishWheelJointState>true</publishWheelJointState>
       </plugin>
+
+      <!-- bumper physics  -->
+	      <link name="bumper">
+	      <pose>0.15 0 .05 0 0 0</pose>
+	      <collision name="collision">
+	          <pose>0 0 0 0 0 0</pose>
+	          <geometry>
+	            <box>
+	              <size>.06 .26 .08</size>
+	            </box>
+	          </geometry>
+	      </collision>
+	      <visual name='front_bumper_visual'>
+	          <pose>0 0 0 0 0 0</pose>
+	          <geometry>
+	            <box>
+	              <size>.05 .25 .08</size>
+	            </box>
+	          </geometry>
+	        <material>
+	            <diffuse>0.0859375 0.3359375 0.0625 1</diffuse>
+	            <specular>.0859375 0.3359375 0.0625 1</specular>
+	            <ambient>.0859375 0.3359375 0.0625 1</ambient>
+	            <emissive>.0859375 0.3359375 0.0625 1</emissive>
+	        </material>
+	      </visual>
+	     
+	     <!-- bumper plugin -->
+	      <sensor name="gripper_contact_sensor" type="contact">
+	        <always_on>true</always_on>
+	        <update_rate>1</update_rate>
+	        <contact>
+	          <collision>collision</collision>
+	        </contact>
+	        <plugin name="gripper_bumper" filename="libgazebo_ros_bumper.so">
+	          <bumperTopicName>front_bumper</bumperTopicName>
+	          <frameName>roomba6</frameName>
+	        </plugin>
+	      </sensor>
+
+	    </link>
+	    <!-- bumper plugin -->
+	    <joint name="bumper" type="fixed">
+	      <parent>create::base</parent>
+	      <child>bumper</child>
+	      <axis>
+	        <xyz>0 1 0</xyz>
+	        <use_parent_model_frame>true</use_parent_model_frame>
+	      </axis>
+	    </joint>
+
 	</model>
 
 <!-- roomba 7 -->
@@ -213,6 +514,59 @@
 	<publishWheelTF>true</publishWheelTF>
 	<publishWheelJointState>true</publishWheelJointState>
       </plugin>
+
+      <!-- bumper physics  -->
+	      <link name="bumper">
+	      <pose>0.15 0 .05 0 0 0</pose>
+	      <collision name="collision">
+	          <pose>0 0 0 0 0 0</pose>
+	          <geometry>
+	            <box>
+	              <size>.06 .26 .08</size>
+	            </box>
+	          </geometry>
+	      </collision>
+	      <visual name='front_bumper_visual'>
+	          <pose>0 0 0 0 0 0</pose>
+	          <geometry>
+	            <box>
+	              <size>.05 .25 .08</size>
+	            </box>
+	          </geometry>
+	        <material>
+	            <diffuse>0.0859375 0.3359375 0.0625 1</diffuse>
+	            <specular>.0859375 0.3359375 0.0625 1</specular>
+	            <ambient>.0859375 0.3359375 0.0625 1</ambient>
+	            <emissive>.0859375 0.3359375 0.0625 1</emissive>
+	        </material>
+	      </visual>
+	     
+	     <!-- bumper plugin -->
+	      <sensor name="gripper_contact_sensor" type="contact">
+	        <always_on>true</always_on>
+	        <update_rate>1</update_rate>
+	        <contact>
+	          <collision>collision</collision>
+	        </contact>
+	        <plugin name="gripper_bumper" filename="libgazebo_ros_bumper.so">
+	          <bumperTopicName>front_bumper</bumperTopicName>
+	          <frameName>roomba7</frameName>
+	        </plugin>
+	      </sensor>
+
+	    </link>
+	    <!-- bumper plugin -->
+	    <joint name="bumper" type="fixed">
+	      <parent>create::base</parent>
+	      <child>bumper</child>
+	      <axis>
+	        <xyz>0 1 0</xyz>
+	        <use_parent_model_frame>true</use_parent_model_frame>
+	      </axis>
+	    </joint>
+
+
+
 	</model>
 
 <!-- roomba 8 -->
@@ -241,6 +595,57 @@
 	<publishWheelTF>true</publishWheelTF>
 	<publishWheelJointState>true</publishWheelJointState>
       </plugin>
+
+      <!-- bumper physics  -->
+	      <link name="bumper">
+	      <pose>0.15 0 .05 0 0 0</pose>
+	      <collision name="collision">
+	          <pose>0 0 0 0 0 0</pose>
+	          <geometry>
+	            <box>
+	              <size>.06 .26 .08</size>
+	            </box>
+	          </geometry>
+	      </collision>
+	      <visual name='front_bumper_visual'>
+	          <pose>0 0 0 0 0 0</pose>
+	          <geometry>
+	            <box>
+	              <size>.05 .25 .08</size>
+	            </box>
+	          </geometry>
+	        <material>
+	            <diffuse>0.0859375 0.3359375 0.0625 1</diffuse>
+	            <specular>.0859375 0.3359375 0.0625 1</specular>
+	            <ambient>.0859375 0.3359375 0.0625 1</ambient>
+	            <emissive>.0859375 0.3359375 0.0625 1</emissive>
+	        </material>
+	      </visual>
+	     
+	     <!-- bumper plugin -->
+	      <sensor name="gripper_contact_sensor" type="contact">
+	        <always_on>true</always_on>
+	        <update_rate>1</update_rate>
+	        <contact>
+	          <collision>collision</collision>
+	        </contact>
+	        <plugin name="gripper_bumper" filename="libgazebo_ros_bumper.so">
+	          <bumperTopicName>front_bumper</bumperTopicName>
+	          <frameName>roomba8</frameName>
+	        </plugin>
+	      </sensor>
+
+	    </link>
+	    <!-- bumper plugin -->
+	    <joint name="bumper" type="fixed">
+	      <parent>create::base</parent>
+	      <child>bumper</child>
+	      <axis>
+	        <xyz>0 1 0</xyz>
+	        <use_parent_model_frame>true</use_parent_model_frame>
+	      </axis>
+	    </joint>
+
 	</model>
 
 <!-- roomba 9 -->
@@ -269,6 +674,57 @@
 	<publishWheelTF>true</publishWheelTF>
 	<publishWheelJointState>true</publishWheelJointState>
       </plugin>
+
+      <!-- bumper physics  -->
+	      <link name="bumper">
+	      <pose>0.15 0 .05 0 0 0</pose>
+	      <collision name="collision">
+	          <pose>0 0 0 0 0 0</pose>
+	          <geometry>
+	            <box>
+	              <size>.06 .26 .08</size>
+	            </box>
+	          </geometry>
+	      </collision>
+	      <visual name='front_bumper_visual'>
+	          <pose>0 0 0 0 0 0</pose>
+	          <geometry>
+	            <box>
+	              <size>.05 .25 .08</size>
+	            </box>
+	          </geometry>
+	        <material>
+	            <diffuse>0.0859375 0.3359375 0.0625 1</diffuse>
+	            <specular>.0859375 0.3359375 0.0625 1</specular>
+	            <ambient>.0859375 0.3359375 0.0625 1</ambient>
+	            <emissive>.0859375 0.3359375 0.0625 1</emissive>
+	        </material>
+	      </visual>
+	     
+	     <!-- bumper plugin -->
+	      <sensor name="gripper_contact_sensor" type="contact">
+	        <always_on>true</always_on>
+	        <update_rate>1</update_rate>
+	        <contact>
+	          <collision>collision</collision>
+	        </contact>
+	        <plugin name="gripper_bumper" filename="libgazebo_ros_bumper.so">
+	          <bumperTopicName>front_bumper</bumperTopicName>
+	          <frameName>roomba9</frameName>
+	        </plugin>
+	      </sensor>
+
+	    </link>
+	    <!-- bumper plugin -->
+	    <joint name="bumper" type="fixed">
+	      <parent>create::base</parent>
+	      <child>bumper</child>
+	      <axis>
+	        <xyz>0 1 0</xyz>
+	        <use_parent_model_frame>true</use_parent_model_frame>
+	      </axis>
+	    </joint>
+
 </model>
 
 <!-- roomba 10 -->
@@ -297,6 +753,57 @@
 	<publishWheelTF>true</publishWheelTF>
 	<publishWheelJointState>true</publishWheelJointState>
       </plugin>
+
+      <!-- bumper physics  -->
+	      <link name="bumper">
+	      <pose>0.15 0 .05 0 0 0</pose>
+	      <collision name="collision">
+	          <pose>0 0 0 0 0 0</pose>
+	          <geometry>
+	            <box>
+	              <size>.06 .26 .08</size>
+	            </box>
+	          </geometry>
+	      </collision>
+	      <visual name='front_bumper_visual'>
+	          <pose>0 0 0 0 0 0</pose>
+	          <geometry>
+	            <box>
+	              <size>.05 .25 .08</size>
+	            </box>
+	          </geometry>
+	        <material>
+	            <diffuse>0.0859375 0.3359375 0.0625 1</diffuse>
+	            <specular>.0859375 0.3359375 0.0625 1</specular>
+	            <ambient>.0859375 0.3359375 0.0625 1</ambient>
+	            <emissive>.0859375 0.3359375 0.0625 1</emissive>
+	        </material>
+	      </visual>
+	     
+	     <!-- bumper plugin -->
+	      <sensor name="gripper_contact_sensor" type="contact">
+	        <always_on>true</always_on>
+	        <update_rate>1</update_rate>
+	        <contact>
+	          <collision>collision</collision>
+	        </contact>
+	        <plugin name="gripper_bumper" filename="libgazebo_ros_bumper.so">
+	          <bumperTopicName>front_bumper</bumperTopicName>
+	          <frameName>roomba10</frameName>
+	        </plugin>
+	      </sensor>
+
+	    </link>
+	    <!-- bumper plugin -->
+	    <joint name="bumper" type="fixed">
+	      <parent>create::base</parent>
+	      <child>bumper</child>
+	      <axis>
+	        <xyz>0 1 0</xyz>
+	        <use_parent_model_frame>true</use_parent_model_frame>
+	      </axis>
+	    </joint>
+
 
 	</model>
 
