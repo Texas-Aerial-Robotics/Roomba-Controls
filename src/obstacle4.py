@@ -4,13 +4,27 @@ import rospy
 import math
 
 from geometry_msgs.msg import Twist
+from gazebo_msgs.msg import ContactsState
 from math import sin
- 
+
+stop = 0;
+
+def callback(data):
+    global stop
+    rospy.loginfo(stop)
+    #rospy.loginfo(len(data.states))
+    if (len(data.states) != 0): 
+        stop = 1
+        rospy.loginfo(stop)
+    else:
+        stop = 0
 
 def main():
+    global stop
 
     #topic differential drive is listening on
     pub = rospy.Publisher('obstacle_roomba_4/cmd_vel', Twist, queue_size=10)
+    rospy.Subscriber("front_bumper14", ContactsState, callback)
 
     #intializing the node
     rospy.init_node('roomba_control', anonymous=True)
@@ -21,9 +35,17 @@ def main():
     msg.angular.z = -.0666
     
     while not rospy.is_shutdown():
-	msg.linear.x = .333 
-	pub.publish(msg)
-	rate.sleep()
+        if(stop == 1):
+            msg.linear.x = 0
+            msg.angular.z = 0
+            
+        else:
+            msg.linear.x = .333 
+            msg.angular.z = -.0666
+            
+        pub.publish(msg)
+        rate.sleep()
+
 
 if __name__ == '__main__':
     try:
