@@ -51,7 +51,7 @@
           <pose>.15 0 0 0 0 0</pose>
           	<geometry>
 	          <mesh>
-	          	<uli>model://bumper.STL</uli>
+	          	<uli>model://bumper.dae</uli>
 	          </mesh>
           </geometry>
      <!--    <material>
