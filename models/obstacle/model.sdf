@@ -33,15 +33,34 @@
       </visual>
        
       <visual name="obstacle_visual">
-        <pose>0 0 1 0 0 0</pose>
-	<geometry>
+        <pose>0 0 1.05 0 0 0</pose>
+	       <geometry>
           <cylinder>
             <radius>0.05</radius>
             <length>2.0</length>
           </cylinder>
         </geometry>
       </visual>
-
+      <collision name="obstacle_collision">
+        <pose>0 0 1.05 0 0 0</pose>
+         <geometry>
+          <cylinder>
+            <radius>0.05</radius>
+            <length>2.0</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>10</mu>
+              <mu2>10</mu2>
+              <fdir1>0 0 0</fdir1>
+              <slip1>0</slip1>
+              <slip2>0</slip2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
 
       <collision name="front_wheel_collision">
         <pose>0.130000 0 0.017000 0 1.570700 1.570700</pose>

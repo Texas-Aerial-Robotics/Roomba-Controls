@@ -3,7 +3,7 @@
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <!-- Because the world path is relative to GAZEBO_RESOURCE_PATH, we append to it here. -->
         <arg name="world_name" value="$(find roomba_control)/worlds/create.world"/>
-    <arg name="paused" value="true"/>
+    <!-- <arg name="paused" value="true"/> -->
     <arg name="use_sim_time" value="true"/> 
     <arg name="gui" value="true"/>
     <arg name="headless" value="false"/>
