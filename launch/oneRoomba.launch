@@ -11,7 +11,7 @@
   </include>
   <param name="/use_sim_time" value="true" /> 
 
-  <node name="publisher_1" pkg="roomba_control" type="roomba1.py" required="true" />
+  
   
 
 </launch>
