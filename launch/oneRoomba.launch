@@ -9,4 +9,8 @@
     <arg name="debug" value="false"/>
   </include>
   <param name="/use_sim_time" value="true" />
+  <node name="publisher_1" pkg="roomba_control" type="roomba1.py" required="true" />
+  <node name="publisher_2" pkg="roomba_control" type="roomba2.py" required="true" />
+  <node name="publisher_3" pkg="roomba_control" type="roomba3.py" required="true" />
+  <node name="publisher_4" pkg="roomba_control" type="roomba4.py" required="true" />
 </launch>
