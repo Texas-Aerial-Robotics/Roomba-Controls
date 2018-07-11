@@ -7,13 +7,13 @@ from geometry_msgs.msg import Twist
 from gazebo_msgs.msg import ContactsState
 from math import sin
 
-stop = 0;
+stop = 0
 
 def callback(data):
     global stop
     rospy.loginfo(stop)
     #rospy.loginfo(len(data.states))
-    if (len(data.states) != 0): 
+    if (len(data.states) != 0):
         stop = 1
         rospy.loginfo(stop)
     else:
@@ -30,19 +30,19 @@ def main():
     rospy.init_node('roomba_control', anonymous=True)
 
     rate = rospy.Rate(10)
-    msg = Twist() 
+    msg = Twist()
     msg.linear.x = 0
     msg.angular.z = -.0666
-    
+
     while not rospy.is_shutdown():
         if(stop == 1):
             msg.linear.x = 0
             msg.angular.z = 0
-            
+
         else:
-            msg.linear.x = .333 
+            msg.linear.x = .333
             msg.angular.z = -.0666
-            
+
         pub.publish(msg)
         rate.sleep()
 

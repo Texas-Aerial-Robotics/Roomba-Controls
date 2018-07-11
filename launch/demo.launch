@@ -3,28 +3,27 @@
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <!-- Because the world path is relative to GAZEBO_RESOURCE_PATH, we append to it here. -->
         <arg name="world_name" value="$(find roomba_control)/worlds/demo.world"/>
-    <arg name="paused" value="true"/>
-    <arg name="use_sim_time" value="true"/> 
+    <arg name="use_sim_time" value="true"/>
     <arg name="gui" value="true"/>
     <arg name="headless" value="false"/>
     <arg name="debug" value="false"/>
   </include>
-  <param name="/use_sim_time" value="true" /> 
+  <param name="/use_sim_time" value="true" />
 
-  <node name="publisher_1" pkg="roomba_control" type="roomba1.py" required="true" />
-  <node name="publisher_2" pkg="roomba_control" type="roomba2.py" required="true" />
-  <node name="publisher_3" pkg="roomba_control" type="roomba3.py" required="true" />
-  <node name="publisher_4" pkg="roomba_control" type="roomba4.py" required="true" />
-  <node name="publisher_5" pkg="roomba_control" type="roomba5.py" required="true" />
-  <node name="publisher_6" pkg="roomba_control" type="roomba6.py" required="true" />
-  <node name="publisher_7" pkg="roomba_control" type="roomba7.py" required="true" />
-  <node name="publisher_8" pkg="roomba_control" type="roomba8.py" required="true" />
-  <node name="publisher_9" pkg="roomba_control" type="roomba9.py" required="true" />
-  <node name="publisher_10" pkg="roomba_control" type="roomba10.py" required="true" />
-  <node name="publisher_11" pkg="roomba_control" type="obstacle1.py" required="true" />
+  <!-- <node name="publisher_1" pkg="roomba_control" type="roomba1.py" required="false" />
+  <node name="publisher_2" pkg="roomba_control" type="roomba2.py" required="false" />
+  <node name="publisher_3" pkg="roomba_control" type="roomba3.py" required="false" />
+  <node name="publisher_4" pkg="roomba_control" type="roomba4.py" required="false" />
+  <node name="publisher_5" pkg="roomba_control" type="roomba5.py" required="false" />
+  <node name="publisher_6" pkg="roomba_control" type="roomba6.py" required="false" />
+  <node name="publisher_7" pkg="roomba_control" type="roomba7.py" required="false" />
+  <node name="publisher_8" pkg="roomba_control" type="roomba8.py" required="false" />
+  <node name="publisher_9" pkg="roomba_control" type="roomba9.py" required="false" />
+  <node name="publisher_10" pkg="roomba_control" type="roomba10.py" required="false" /> -->
+<!--   <node name="publisher_11" pkg="roomba_control" type="obstacle1.py" required="true" />
   <node name="publisher_12" pkg="roomba_control" type="obstacle2.py" required="true" />
   <node name="publisher_13" pkg="roomba_control" type="obstacle3.py" required="true" />
-  <node name="publisher_14" pkg="roomba_control" type="obstacle4.py" required="true" />
-  
+  <node name="publisher_14" pkg="roomba_control" type="obstacle4.py" required="true" /> -->
+
 
 </launch>
